@@ -18,8 +18,6 @@
 
 https://github.com/user-attachments/assets/1ddc1f60-b59b-4cdc-8dcb-7cb2014e5160
 
-[完整录屏（约 33 秒）](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-Full.mp4) · [3 秒](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-3s.mp4) · [15 秒](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-15s.mp4) · [30 秒](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-30s.mp4)
-
 <details>
 <summary>查看 12 秒无声动图</summary>
 
