@@ -1,0 +1,416 @@
+{
+  "asset_version": "salamander-v3-subset-candidate",
+  "channels": 2,
+  "crop": {
+    "source_start_frame": 0,
+    "tail_fade_ms": 120
+  },
+  "provenance": {
+    "author": "Alexander Holm",
+    "license": "CC BY 3.0",
+    "license_filename": "LICENSE-CC-BY-3.0.html",
+    "license_sha256": "655c0b9134ce2be63356976cf1f8a5ab2ca6f4f32acf280ea01604ebe9a1b0b8",
+    "locally_computed_sha256": "fe595c7722b70860e6377f82948d1c0cfcf27ecebf500dc79534408a78a62892",
+    "retrieval_date": "2026-08-11",
+    "sha256_notice": "SHA-256 \u4e3a\u4e0b\u8f7d\u540e\u7531 AI Piano Studio \u9879\u76ee\u672c\u5730\u8ba1\u7b97\uff0c\u5b98\u65b9\u539f\u59cb\u53d1\u5e03\u4ec5\u63d0\u4f9b SHA-1/MD5\u3002",
+    "source_filename": "SalamanderGrandPianoV3_44.1khz16bit.tar.bz2",
+    "source_md5": "bf8a7782f4e995a7beecd1e9110bb16f",
+    "source_sha1": "ec5a179a1218a590d2f88728f56b583e79876896",
+    "source_size": 488713261,
+    "source_url": "https://archive.org/download/SalamanderGrandPianoV3/SalamanderGrandPianoV3_44.1khz16bit.tar.bz2"
+  },
+  "roots": [
+    {
+      "layers": {
+        "Hard": {
+          "file": "A0-hard.wav",
+          "frame_count": 192000,
+          "sha256": "505907ee8c7db9484f6c82a5463972931ebad0ea5e833273e9d9a6ea0560cbd5",
+          "source_file": "44.1khz16bit/A0v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "A0-soft.wav",
+          "frame_count": 192000,
+          "sha256": "d02b12288ba48a313dda2a047dbc82da0367979a8be78be7a16c29e75aafaea7",
+          "source_file": "44.1khz16bit/A0v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 6.0,
+      "root_midi": 21,
+      "root_note": "A0"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "C1-hard.wav",
+          "frame_count": 192000,
+          "sha256": "b06beaf3e9e51d73446de423d851e30e53934abcebb9cb8219c717ed4104b417",
+          "source_file": "44.1khz16bit/C1v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "C1-soft.wav",
+          "frame_count": 192000,
+          "sha256": "f4a1f39b1f2e3fbfd6df05ac60b5d7dfab17465d5200125554b2f10aa8cb79aa",
+          "source_file": "44.1khz16bit/C1v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 6.0,
+      "root_midi": 24,
+      "root_note": "C1"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "Ds1-hard.wav",
+          "frame_count": 192000,
+          "sha256": "15832fca6c6bd61a9bc4215f0a2e506ab718b77510249b6edf1516878fd99dfe",
+          "source_file": "44.1khz16bit/D#1v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "Ds1-soft.wav",
+          "frame_count": 192000,
+          "sha256": "60151581a7b2720cd847f7eb79a7219240fbe0df94bac6a779bc5375c0f3550e",
+          "source_file": "44.1khz16bit/D#1v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 6.0,
+      "root_midi": 27,
+      "root_note": "D#1"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "A1-hard.wav",
+          "frame_count": 192000,
+          "sha256": "8e95d45070140bcbf39527e089b3eb13b089251bce57ddd28273335b97299628",
+          "source_file": "44.1khz16bit/A1v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "A1-soft.wav",
+          "frame_count": 192000,
+          "sha256": "3b3e46b7ab1404d361414c545926c04c8983726e8b9711dd2ad0981ec3fdb591",
+          "source_file": "44.1khz16bit/A1v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 6.0,
+      "root_midi": 33,
+      "root_note": "A1"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "Ds2-hard.wav",
+          "frame_count": 192000,
+          "sha256": "bea95726681ea4de928f9fa7a9b8f30e3516b9668f603e9293b867b5b55c4782",
+          "source_file": "44.1khz16bit/D#2v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "Ds2-soft.wav",
+          "frame_count": 192000,
+          "sha256": "e4f37339decf2eb21c2f4648c39fc51f4a0c0837e35eb41d9ae4fbf894788e40",
+          "source_file": "44.1khz16bit/D#2v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 6.0,
+      "root_midi": 39,
+      "root_note": "D#2"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "A2-hard.wav",
+          "frame_count": 192000,
+          "sha256": "73188d8f6da19043663222eab61ebb5e928931dce9076e9dfeac6e773eb4b247",
+          "source_file": "44.1khz16bit/A2v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "A2-soft.wav",
+          "frame_count": 192000,
+          "sha256": "903ae1a3d491fde820f09ee758a2dde1814961c86ae2c25ef17525e4f56b1b89",
+          "source_file": "44.1khz16bit/A2v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 6.0,
+      "root_midi": 45,
+      "root_note": "A2"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "Ds3-hard.wav",
+          "frame_count": 128000,
+          "sha256": "5c993a80a92ba27949ff96c72811bc01ca6f3188bada4f66d433d02253138d74",
+          "source_file": "44.1khz16bit/D#3v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "Ds3-soft.wav",
+          "frame_count": 128000,
+          "sha256": "c0c9df09bce6c2ac678ad952227b7d0ca30b7fa72c8324c50b7fba1028faba22",
+          "source_file": "44.1khz16bit/D#3v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 4.0,
+      "root_midi": 51,
+      "root_note": "D#3"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "A3-hard.wav",
+          "frame_count": 128000,
+          "sha256": "097f3539198dae852aaed7777804952dad9e548c241fa963a445b6187494a6e5",
+          "source_file": "44.1khz16bit/A3v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "A3-soft.wav",
+          "frame_count": 128000,
+          "sha256": "4a32b1921e0a8bbc628bdbba54c30f074001503591d48ae21ffcd73807d80d26",
+          "source_file": "44.1khz16bit/A3v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 4.0,
+      "root_midi": 57,
+      "root_note": "A3"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "Ds4-hard.wav",
+          "frame_count": 128000,
+          "sha256": "3ac9e5a889edecac8a3e884a4bdf4e0fdeb8b5ed460cc783bdad0551c1d1ec23",
+          "source_file": "44.1khz16bit/D#4v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "Ds4-soft.wav",
+          "frame_count": 128000,
+          "sha256": "be14cc6f21d7d38911c606e7cdf08ef34f7bbc9c091367b732076455b3ed474e",
+          "source_file": "44.1khz16bit/D#4v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 4.0,
+      "root_midi": 63,
+      "root_note": "D#4"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "A4-hard.wav",
+          "frame_count": 128000,
+          "sha256": "1ca48de7e53e6c06171a0b0fb9d8d5431c90e8f3ebee518a8dd59da3f55dae9b",
+          "source_file": "44.1khz16bit/A4v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "A4-soft.wav",
+          "frame_count": 128000,
+          "sha256": "c535a552c75763b789d2a9b1d6ee8e1946fa43cab79e4ee2f6e2167581475df5",
+          "source_file": "44.1khz16bit/A4v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 4.0,
+      "root_midi": 69,
+      "root_note": "A4"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "Fs4-hard.wav",
+          "frame_count": 128000,
+          "sha256": "0a26e2c7916ee0382bad8132940557a5b61c4a30d56bed02daa7bc0322400b38",
+          "source_file": "44.1khz16bit/F#4v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "Fs4-soft.wav",
+          "frame_count": 128000,
+          "sha256": "e6e860f514db93ab9b7ac742f2faf653febc660dca94ae4e393388b4afc8259c",
+          "source_file": "44.1khz16bit/F#4v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 4.0,
+      "root_midi": 66,
+      "root_note": "F#4"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "Ds5-hard.wav",
+          "frame_count": 96000,
+          "sha256": "3bf49d87d4021030d12c9ba7dc8ef6d8f53d4bdee80823408f6e3243bc37e25d",
+          "source_file": "44.1khz16bit/D#5v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "Ds5-soft.wav",
+          "frame_count": 96000,
+          "sha256": "358212ffb4418dc62fb96d165788a7172b0cb37b4708aea6f24827303cdea6f9",
+          "source_file": "44.1khz16bit/D#5v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 3.0,
+      "root_midi": 75,
+      "root_note": "D#5"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "A5-hard.wav",
+          "frame_count": 96000,
+          "sha256": "c73cd01ad4d29ac17107511f333d08dcc910fd5270a14983a216576824b77110",
+          "source_file": "44.1khz16bit/A5v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "A5-soft.wav",
+          "frame_count": 96000,
+          "sha256": "800ab445277a697e460c6f119d4756208b7d546cbc0c4fe288c6f0fe1f7a34bc",
+          "source_file": "44.1khz16bit/A5v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 3.0,
+      "root_midi": 81,
+      "root_note": "A5"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "Ds6-hard.wav",
+          "frame_count": 70400,
+          "sha256": "20b28c5a1f62c63e1587e67ec413b67603c5705184b5fa629bc9a966db6cf431",
+          "source_file": "44.1khz16bit/D#6v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "Ds6-soft.wav",
+          "frame_count": 70400,
+          "sha256": "ee64b0f1bfdcd01c8841910317ca714c9669bdf635a272cfa874eadc76926add",
+          "source_file": "44.1khz16bit/D#6v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 2.2,
+      "root_midi": 87,
+      "root_note": "D#6"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "A6-hard.wav",
+          "frame_count": 70400,
+          "sha256": "e797a5b86d8986d6ecfc6761cee8b4e512f69e969c0c3c2a1244d717d94d8e4d",
+          "source_file": "44.1khz16bit/A6v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "A6-soft.wav",
+          "frame_count": 70400,
+          "sha256": "4834808cca3a202891d4f22f01c54141cc0bf4683b0e8feaf4b8bf9673e51dda",
+          "source_file": "44.1khz16bit/A6v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 2.2,
+      "root_midi": 93,
+      "root_note": "A6"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "Ds7-hard.wav",
+          "frame_count": 70400,
+          "sha256": "c10e324b790f114f0d2078b9ff691ab81c087a8d5ecc90261916d5289dc27709",
+          "source_file": "44.1khz16bit/D#7v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "Ds7-soft.wav",
+          "frame_count": 70400,
+          "sha256": "c7c955345ef2c6c34bbf8051d790a5db9216c69b03e61170ce6fa949d89dd709",
+          "source_file": "44.1khz16bit/D#7v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 2.2,
+      "root_midi": 99,
+      "root_note": "D#7"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "A7-hard.wav",
+          "frame_count": 70400,
+          "sha256": "bb26f5fc2549e7fefeacfb46bec9af9930100503bfa5b5c7274a23b24f4f9b69",
+          "source_file": "44.1khz16bit/A7v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "A7-soft.wav",
+          "frame_count": 70400,
+          "sha256": "98928511632ca3d20dfa5aad138d0f645ed09993484b3e0904131907faa44a1b",
+          "source_file": "44.1khz16bit/A7v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 2.2,
+      "root_midi": 105,
+      "root_note": "A7"
+    },
+    {
+      "layers": {
+        "Hard": {
+          "file": "C8-hard.wav",
+          "frame_count": 48000,
+          "sha256": "f4cf84a1d321ada434ecaca680e5a97f54e8a3d234b3d3d78e9892b96d327ba2",
+          "source_file": "44.1khz16bit/C8v13.wav",
+          "source_layer": 13
+        },
+        "Soft": {
+          "file": "C8-soft.wav",
+          "frame_count": 48000,
+          "sha256": "6aeaad0342128f4117ccfe628631c4a1b8ac8b936d5f68b35ff13ffcd35143d6",
+          "source_file": "44.1khz16bit/C8v8.wav",
+          "source_layer": 8
+        }
+      },
+      "maximum_duration_seconds": 1.5,
+      "root_midi": 108,
+      "root_note": "C8"
+    }
+  ],
+  "sample_rate": 32000,
+  "sample_width_bytes": 2,
+  "source": {
+    "author": "Alexander Holm",
+    "directory": "SalamanderGrandPianoV3_44.1khz16bit",
+    "hard_layer": 13,
+    "license": "CC BY 3.0",
+    "project": "Salamander Grand Piano v3",
+    "soft_layer": 8
+  },
+  "sustain": {
+    "loop_free": true
+  },
+  "total_wav_bytes": 18510384
+}

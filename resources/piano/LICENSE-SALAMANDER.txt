@@ -1,0 +1,15 @@
+Salamander Grand Piano v3
+Author: Alexander Holm
+License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+License terms: https://creativecommons.org/licenses/by/3.0/
+Source: official Salamander Grand Piano v3 project
+
+Modifications:
+1. Selected root-note samples.
+2. Selected velocity layers.
+3. Resampled.
+4. Cropped.
+5. Integrated into AI Piano Studio.
+
+Alexander Holm does not endorse or participate in AI Piano Studio.
+AI Piano Studio is not affiliated with Alexander Holm.

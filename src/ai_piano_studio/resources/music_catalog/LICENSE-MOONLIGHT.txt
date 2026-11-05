@@ -1,0 +1,16 @@
+Moonlight Sonata, Op.27 No.2, first movement
+Composer: Ludwig van Beethoven (1770-1827)
+Typeset by Chris Sawer and Stewart Holmes; engraving by GNU LilyPond.
+The Mutopia Project, Mutopia-2007/02/11-276.
+Source edition: Berners 1908, edited by A. Winterberger.
+
+This MIDI edition is licensed under Creative Commons Attribution-ShareAlike 2.5.
+License: https://creativecommons.org/licenses/by-sa/2.5/
+Legal code: https://creativecommons.org/licenses/by-sa/2.5/legalcode
+Source: https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=276
+Download: https://www.mutopiaproject.org/ftp/BeethovenLv/O27/moonlight/moonlight-mids.zip
+The bundled moonlight1.mid is unmodified from that archive. Catalog attribution
+and license must accompany copies. Arrangements derived from this edition retain
+its attribution and ShareAlike license. This music asset is separate from the
+application code's GPL-3.0-only license. Provided as-is; this is a score rendition,
+not a transcription of a particular recording.

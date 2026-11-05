@@ -1,0 +1,319 @@
+[
+  {
+    "file": "qt-everywhere-src-6.12.0.tar.xz",
+    "url": "https://download.qt.io/official_releases/qt/6.12/6.12.0/single/qt-everywhere-src-6.12.0.tar.xz",
+    "bytes": 443394020,
+    "sha256": "98ff4f44bac6ec3e1e62ee2a4316ae0e3d15badb015d753cc0268a20db52f165",
+    "official_sha256_verified": true
+  },
+  {
+    "file": "pyside-setup-everywhere-src-6.12.0.tar.xz",
+    "url": "https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-6.12.0-src/pyside-setup-everywhere-src-6.12.0.tar.xz",
+    "bytes": 18211772,
+    "sha256": "099c1a597cf33c1b000e11cf68a0b82d216fb802bf81726efc720394f10c7751",
+    "official_sha256_verified": true
+  },
+  {
+    "file": "ffmpeg-9.0.1.tar.xz",
+    "url": "https://ffmpeg.org/releases/ffmpeg-9.0.1.tar.xz",
+    "bytes": 12036420,
+    "sha256": "cf38e0e28c7e5605942c4a77755349b0145804a397af37eb1fb4c77cb237f635"
+  },
+  {
+    "file": "Python-3.12.16.tar.xz",
+    "url": "https://www.python.org/ftp/python/3.12.16/Python-3.12.16.tar.xz",
+    "bytes": 20839652,
+    "sha256": "b5796915dc45ff745cfb4e990a7e7c93d6f546328a102ce31448d69ebc37575c"
+  },
+  {
+    "file": "cpython-3.12.16+20261026-x86_64-pc-windows-msvc-pgo-full.tar.zst",
+    "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.12.16%2B20261026-x86_64-pc-windows-msvc-pgo-full.tar.zst",
+    "bytes": 43768992,
+    "sha256": "37b4eb2818fee605fefa75ed156c4f2e1aaeaebaf662f9b30177c842ee16c48f",
+    "official_sha256_verified": true,
+    "build_commit": "fa506e0858ac9f2cc5b289c137b888a2aa24d1ee"
+  },
+  {
+    "file": "cpython-3.12.16+20261026-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+    "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.12.16%2B20261026-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+    "bytes": 22014416,
+    "sha256": "1f2ab53880fc67ea323398c6388e05af28addc99a8e389209f08a51fdff4b149",
+    "official_sha256_verified": true,
+    "role": "Exact installed runtime; python312.dll SHA256 00f1e27a720f04606d9f6eac703b89418265fde213d6cb9378a0a4854b5d4669 verified"
+  },
+  {
+    "file": "python-build-standalone-fa506e0858ac9f2cc5b289c137b888a2aa24d1ee.tar.gz",
+    "url": "https://api.github.com/repos/astral-sh/python-build-standalone/tarball/fa506e0858ac9f2cc5b289c137b888a2aa24d1ee",
+    "bytes": 465386,
+    "sha256": "60154130ce2ea70831b1ed43609c18b4213b54bfd8a8c42684960a5b094dc3c9",
+    "role": "Pinned runtime build scripts and dependency source checksums"
+  },
+  {
+    "file": "altgraph-0.17.5.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/7e/f8/97fdf103f38fed6792a1601dbc16cc8aac56e7459a9fff08c812d8ae177a/altgraph-0.17.5.tar.gz",
+    "bytes": 48428,
+    "sha256": "c87b395dd12fabde9c99573a9749d67da8d29ef9de0125c7f536699b4a9bc9e7",
+    "official_sha256_verified": true,
+    "component": "altgraph",
+    "version": "0.17.5"
+  },
+  {
+    "file": "colorama-0.4.6.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz",
+    "bytes": 27697,
+    "sha256": "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44",
+    "official_sha256_verified": true,
+    "component": "colorama",
+    "version": "0.4.6"
+  },
+  {
+    "file": "comtypes-1.4.17.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/0e/ff/c7836bd0d78fc615281016f154f514e9d523d7cb9ab9e8b4d344adc5f5e7/comtypes-1.4.17.tar.gz",
+    "bytes": 262743,
+    "sha256": "3d9c1e92ad8daf7600d371e76ee16161a627a5fb70c3144f6e52e78af6034363",
+    "official_sha256_verified": true,
+    "component": "comtypes",
+    "version": "1.4.17"
+  },
+  {
+    "file": "iniconfig-2.3.0.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/72/34/14ca021ce8e5dfedc35312d08ba8bf51fdd999c576889fc2c24cb97f4f10/iniconfig-2.3.0.tar.gz",
+    "bytes": 20503,
+    "sha256": "c76315c77db068650d49c5b56314774a7804df16fee4402c1f19d6d15d8c4730",
+    "official_sha256_verified": true,
+    "component": "iniconfig",
+    "version": "2.3.0"
+  },
+  {
+    "file": "jaraco.classes-3.4.0.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/06/c0/ed4a27bc5571b99e3cff68f8a9fa5b56ff7df1c2251cc715a652ddd26402/jaraco.classes-3.4.0.tar.gz",
+    "bytes": 11780,
+    "sha256": "47a024b51d0239c0dd8c8540c6c7f484be3b8fcf0b2d85c13825780d3b3f3acd",
+    "official_sha256_verified": true,
+    "component": "jaraco.classes",
+    "version": "3.4.0"
+  },
+  {
+    "file": "jaraco_context-6.1.2.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/af/50/4763cd07e722bb6285316d390a164bc7e479db9d90daa769f22578f698b4/jaraco_context-6.1.2.tar.gz",
+    "bytes": 16801,
+    "sha256": "f1a6c9d391e661cc5b8d39861ff077a7dc24dc23833ccee564b234b81c82dfe3",
+    "official_sha256_verified": true,
+    "component": "jaraco.context",
+    "version": "6.1.2"
+  },
+  {
+    "file": "jaraco_functools-4.6.0.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/6c/1f/c23395957d41ccf27c4e535c3d334c4051e5395b3752057ba4cbaec35c56/jaraco_functools-4.6.0.tar.gz",
+    "bytes": 20837,
+    "sha256": "880c577ec9720b3a052d5bc611fb9f2269b3d87902ef42440df443b88e443280",
+    "official_sha256_verified": true,
+    "component": "jaraco.functools",
+    "version": "4.6.0"
+  },
+  {
+    "file": "keyring-25.7.0.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/43/4b/674af6ef2f97d56f0ab5153bf0bfa28ccb6c3ed4d1babf4305449668807b/keyring-25.7.0.tar.gz",
+    "bytes": 63516,
+    "sha256": "fe01bd85eb3f8fb3dd0405defdeac9a5b4f6f0439edbb3149577f244a2e8245b",
+    "official_sha256_verified": true,
+    "component": "keyring",
+    "version": "25.7.0"
+  },
+  {
+    "file": "more_itertools-11.1.0.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz",
+    "bytes": 145772,
+    "sha256": "48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d",
+    "official_sha256_verified": true,
+    "component": "more-itertools",
+    "version": "11.1.0"
+  },
+  {
+    "file": "numpy-2.5.2.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/9a/80/db0b4559e57ec36362bedbb05530a87fafbcb6067708c946967a41d449e7/numpy-2.5.2.tar.gz",
+    "bytes": 20773161,
+    "sha256": "d482d171c406ae88c5b19cad3b6a1c4c5209f886ab74bc44c2c865c23f52d860",
+    "official_sha256_verified": true,
+    "component": "numpy",
+    "version": "2.5.2"
+  },
+  {
+    "file": "packaging-26.2.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz",
+    "bytes": 228134,
+    "sha256": "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661",
+    "official_sha256_verified": true,
+    "component": "packaging",
+    "version": "26.2"
+  },
+  {
+    "file": "pefile-2024.8.26.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/03/4f/2750f7f6f025a1507cd3b7218691671eecfd0bbebebe8b39aa0fe1d360b8/pefile-2024.8.26.tar.gz",
+    "bytes": 76008,
+    "sha256": "3ff6c5d8b43e8c37bb6e6dd5085658d658a7a0bdcd20b6a07b1fcfc1c4e9d632",
+    "official_sha256_verified": true,
+    "component": "pefile",
+    "version": "2024.8.26"
+  },
+  {
+    "file": "pluggy-1.6.0.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz",
+    "bytes": 69412,
+    "sha256": "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3",
+    "official_sha256_verified": true,
+    "component": "pluggy",
+    "version": "1.6.0"
+  },
+  {
+    "file": "pygments-2.20.0.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz",
+    "bytes": 4955991,
+    "sha256": "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f",
+    "official_sha256_verified": true,
+    "component": "Pygments",
+    "version": "2.20.0"
+  },
+  {
+    "file": "pyinstaller-6.21.0.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/d5/4d/ec706c3fcf39e26888c35b39615ff4d5865d184069666c47492cff1fbe50/pyinstaller-6.21.0.tar.gz",
+    "bytes": 4061519,
+    "sha256": "bb9fab705983e393a2d1cac77d6972513057ad800215fd861dc15ff5272e98fd",
+    "official_sha256_verified": true,
+    "component": "pyinstaller",
+    "version": "6.21.0"
+  },
+  {
+    "file": "pyinstaller_hooks_contrib-2026.6.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/94/5b/c9fe0db5e83ee1c39b2258fa21d23b15e1a60786b6c5990ee5074ead8bb6/pyinstaller_hooks_contrib-2026.6.tar.gz",
+    "bytes": 173354,
+    "sha256": "bef5002c32f4f50bd55b005da12cff64eca8783e7eaf86a06a62410164bab725",
+    "official_sha256_verified": true,
+    "component": "pyinstaller-hooks-contrib",
+    "version": "2026.6"
+  },
+  {
+    "file": "pytest-8.4.2.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/a3/5c/00a0e072241553e1a7496d638deababa67c5058571567b92a7eaa258397c/pytest-8.4.2.tar.gz",
+    "bytes": 1519618,
+    "sha256": "86c0d0b93306b961d58d62a4db4879f27fe25513d4b969df351abdddb3c30e01",
+    "official_sha256_verified": true,
+    "component": "pytest",
+    "version": "8.4.2"
+  },
+  {
+    "file": "pytest_qt-4.5.0.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/d3/61/8bdec02663c18bf5016709b909411dce04a868710477dc9b9844ffcf8dd2/pytest_qt-4.5.0.tar.gz",
+    "bytes": 128702,
+    "sha256": "51620e01c488f065d2036425cbc1cbcf8a6972295105fd285321eb47e66a319f",
+    "official_sha256_verified": true,
+    "component": "pytest-qt",
+    "version": "4.5.0"
+  },
+  {
+    "file": "pywin32-ctypes-0.2.3.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/85/9f/01a1a99704853cb63f253eea009390c88e7131c67e66a0a02099a8c917cb/pywin32-ctypes-0.2.3.tar.gz",
+    "bytes": 29471,
+    "sha256": "d162dc04946d704503b2edc4d55f3dba5c1d539ead017afa00142c38b9885755",
+    "official_sha256_verified": true,
+    "component": "pywin32-ctypes",
+    "version": "0.2.3"
+  },
+  {
+    "file": "setuptools-84.2.1.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz",
+    "bytes": 1230289,
+    "sha256": "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc",
+    "official_sha256_verified": true,
+    "component": "setuptools",
+    "version": "84.2.1"
+  },
+  {
+    "file": "typing_extensions-4.16.0.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz",
+    "bytes": 113555,
+    "sha256": "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5",
+    "official_sha256_verified": true,
+    "component": "typing_extensions",
+    "version": "4.16.0"
+  },
+  {
+    "file": "mesa-11.2.2.tar.xz",
+    "url": "https://archive.mesa3d.org/older-versions/11.x/11.2.2/mesa-11.2.2.tar.xz",
+    "bytes": 7860932,
+    "sha256": "40e148812388ec7c6d7b6657d5a16e2e8dabba8b97ddfceea5197947647bdfb4",
+    "component": "Mesa llvmpipe fallback",
+    "version_evidence": "opengl32sw.dll embedded Mesa 11.2.2 / LLVM 3.6.2 strings; Qt upstream build reference https://wiki.qt.io/MesaLlvmpipe"
+  },
+  {
+    "file": "llvm-3.6.2.src.tar.xz",
+    "url": "https://releases.llvm.org/3.6.2/llvm-3.6.2.src.tar.xz",
+    "bytes": 12802380,
+    "sha256": "f60dc158bfda6822de167e87275848969f0558b3134892ff54fced87e4667b94",
+    "component": "LLVM used by llvmpipe",
+    "version_evidence": "opengl32sw.dll embedded Mesa 11.2.2 / LLVM 3.6.2 strings; Qt upstream build reference https://wiki.qt.io/MesaLlvmpipe"
+  },
+  {
+    "file": "libffi-3.8.0.tar.gz",
+    "url": "https://github.com/libffi/libffi/releases/download/v3.8.0/libffi-3.8.0.tar.gz",
+    "bytes": 1581626,
+    "sha256": "7da3e2d9a171eb0a038f592ecad3ff2bb2550f3496d87b3b29ad0cf4430c0db4",
+    "version": "3.8.0",
+    "component": "libffi",
+    "provenance": "Pinned python-build-standalone 20261026 downloads.json"
+  },
+  {
+    "file": "openssl-3.5.9.tar.gz",
+    "url": "https://github.com/openssl/openssl/releases/download/openssl-3.5.9/openssl-3.5.9.tar.gz",
+    "bytes": 53279637,
+    "sha256": "603f5602e2eef00d77fbd429d34dcd5822bb301757a1bc9cdb24c670f1eb859a",
+    "version": "3.5.9",
+    "component": "openssl-3.5",
+    "provenance": "Pinned python-build-standalone 20261026 downloads.json"
+  },
+  {
+    "file": "sqlite-autoconf-3530100.tar.gz",
+    "url": "https://www.sqlite.org/2026/sqlite-autoconf-3530100.tar.gz",
+    "bytes": 3275272,
+    "sha256": "83e6b2020a034e9a7ad4a72feea59e1ad52f162e09cbd26735a3ffb98359fc4f",
+    "version": "3530100",
+    "component": "sqlite",
+    "provenance": "Pinned python-build-standalone 20261026 downloads.json"
+  },
+  {
+    "file": "zlib-1.3.2.tar.gz",
+    "url": "https://github.com/madler/zlib/releases/download/v1.3.2/zlib-1.3.2.tar.gz",
+    "bytes": 1502830,
+    "sha256": "bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16",
+    "version": "1.3.2",
+    "component": "zlib",
+    "provenance": "Pinned python-build-standalone 20261026 downloads.json"
+  },
+  {
+    "file": "bzip2-1.0.8.tar.gz",
+    "url": "https://astral-sh.github.io/mirror/files/bzip2-1.0.8.tar.gz",
+    "bytes": 810029,
+    "sha256": "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269",
+    "version": "1.0.8",
+    "component": "bzip2",
+    "provenance": "Pinned python-build-standalone 20261026 downloads.json"
+  },
+  {
+    "file": "xz-5.8.4.tar.gz",
+    "url": "https://github.com/tukaani-project/xz/releases/download/v5.8.4/xz-5.8.4.tar.gz",
+    "bytes": 2799797,
+    "sha256": "0014c7886930454fe8bd4228665b51af55eeae560ea135c9c4cd33f55b2591d9",
+    "version": "5.8.4",
+    "component": "xz",
+    "provenance": "Pinned python-build-standalone 20261026 downloads.json"
+  },
+  {
+    "file": "zlib-1.3.1.tar.gz",
+    "url": "https://zlib.net/fossils/zlib-1.3.1.tar.gz",
+    "bytes": 1512791,
+    "sha256": "9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23",
+    "component": "FFmpeg zlib dependency",
+    "version": "1.3.1",
+    "version_evidence": "FFMPEG-BUILD.json configuration"
+  }
+]

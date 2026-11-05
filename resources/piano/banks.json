@@ -1,0 +1,28 @@
+{
+  "banks": [
+    {
+      "id": "layers-06-11",
+      "label": "柔和",
+      "position": 0.0,
+      "manifest": "banks/layers-06-11/manifest.json",
+      "soft_layer": 6,
+      "hard_layer": 11
+    },
+    {
+      "id": "layers-07-12",
+      "label": "均衡",
+      "position": 0.5,
+      "manifest": "banks/layers-07-12/manifest.json",
+      "soft_layer": 7,
+      "hard_layer": 12
+    },
+    {
+      "id": "layers-08-13",
+      "label": "明亮",
+      "position": 1.0,
+      "manifest": "banks/layers-08-13/manifest.json",
+      "soft_layer": 8,
+      "hard_layer": 13
+    }
+  ]
+}

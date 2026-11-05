@@ -1,0 +1,13 @@
+{
+  "version": "9.0.1",
+  "license": "LGPL version 2.1 or later",
+  "configuration": "--prefix=/c/FFmpeg-n9.0.1/build/msvc/installed --disable-programs --disable-doc --disable-debug --enable-network --disable-lzma --enable-pic --disable-vulkan --disable-v4l2-m2m --disable-decoder=truemotion1 --disable-avdevice --disable-avfilter --enable-zlib --extra-cflags='-IC:/zlib-1.3.1/build/amd64' --extra-ldflags='-LIBPATH:C:/zlib-1.3.1/build/amd64' --toolchain=msvc --enable-shared --disable-static",
+  "qt_wheel": "PySide6 6.12.0",
+  "dlls": {
+    "avcodec-63.dll": "fd6b08a07310d34a6be4349172557f5a234bd66420e28934b625b669a763ba2f",
+    "avformat-63.dll": "8a38846c7420f94aa85b4d87dae7d97d5c54a5cdb9eb6c5eb1c7b40a86e2ab8b",
+    "avutil-61.dll": "2538cdbed7a6d2c8d1219bf1a79412e6bf657d16ce5759b62df3182813f4e4dc",
+    "swresample-7.dll": "a7c667837f334c9d2820ec95c89e7cdf0205698e45341537b3ae6c761d9be1dc",
+    "swscale-10.dll": "a6142d95cb96f8397fcc6b99142a674a5f0417206de40091b43a64024b734658"
+  }
+}

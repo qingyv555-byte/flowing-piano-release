@@ -1,0 +1,61 @@
+name: Verify Windows release packages
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to verify
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  packaged-smoke:
+    runs-on: windows-2025
+    timeout-minutes: 12
+    env:
+      GH_TOKEN: ${{ github.token }}
+      RELEASE_TAG: ${{ inputs.tag }}
+      QT_QPA_PLATFORM: offscreen
+      QT_QUICK_BACKEND: software
+    steps:
+      - name: Download and verify the release assets
+        shell: pwsh
+        run: |
+          $release = gh api "repos/$env:GITHUB_REPOSITORY/releases" --jq ".[] | select(.tag_name == `"$env:RELEASE_TAG`")" | ConvertFrom-Json
+          if ($LASTEXITCODE -or !$release) { throw "Release lookup failed" }
+          $names = @('AI-Piano-Studio-Portable.zip','AI-Piano-Studio-Setup.exe','SHA256SUMS.txt')
+          foreach ($name in $names) {
+            $asset = $release.assets | Where-Object name -eq $name | Select-Object -First 1
+            if (!$asset) { throw "Missing asset $name" }
+            gh api "repos/$env:GITHUB_REPOSITORY/releases/assets/$($asset.id)" -H 'Accept: application/octet-stream' > $name
+            if ($LASTEXITCODE -or (Get-Item -LiteralPath $name).Length -ne $asset.size) { throw "Download failed for $name" }
+            $hash = (Get-FileHash -LiteralPath $name).Hash.ToLowerInvariant()
+            if ($asset.digest -ne "sha256:$hash") { throw "Hash mismatch for $name" }
+          }
+      - name: Launch Portable and install, launch and uninstall Setup
+        shell: pwsh
+        run: |
+          function Start-Checked([string]$File, [string[]]$Arguments) {
+            $process = Start-Process -FilePath $File -ArgumentList $Arguments -Wait -PassThru -WindowStyle Hidden
+            if ($process.ExitCode -ne 0) { throw "$File returned $($process.ExitCode)" }
+          }
+          Expand-Archive -LiteralPath 'AI-Piano-Studio-Portable.zip' -DestinationPath portable
+          $portable = (Get-ChildItem -LiteralPath portable -Recurse -Filter 'AI-Piano-Studio.exe' | Select-Object -First 1).FullName
+          if (!$portable) { throw 'Portable executable missing' }
+          $portableProfile = Join-Path $env:RUNNER_TEMP 'flowing-piano-portable'
+          Start-Checked $portable @('--smoke-test','--profile-home',"`"$portableProfile`"")
+          $install = Join-Path $env:RUNNER_TEMP 'flowing-piano-installed'
+          $setupProfile = Join-Path $env:RUNNER_TEMP 'flowing-piano-profile'
+          $sentinel = Join-Path $env:RUNNER_TEMP 'flowing-piano-user-data.txt'
+          Set-Content -LiteralPath $sentinel -Value 'keep me'
+          Start-Checked (Resolve-Path 'AI-Piano-Studio-Setup.exe') @('/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART','/NOICONS',"/DIR=`"$install`"")
+          Start-Checked (Join-Path $install 'AI-Piano-Studio.exe') @('--smoke-test','--profile-home',"`"$setupProfile`"")
+          $uninstaller = (Get-ChildItem -LiteralPath $install -Filter 'unins*.exe' | Select-Object -First 1).FullName
+          if (!$uninstaller) { throw 'Uninstaller missing' }
+          Start-Checked $uninstaller @('/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART')
+          if (Test-Path -LiteralPath (Join-Path $install 'AI-Piano-Studio.exe')) { throw 'Executable survived uninstall' }
+          if (!(Test-Path -LiteralPath $setupProfile) -or (Get-Content -LiteralPath $sentinel) -ne 'keep me') { throw 'User data not preserved' }
+          Write-Output 'Clean Windows runner passed Portable, Setup, uninstall, and profile retention.'

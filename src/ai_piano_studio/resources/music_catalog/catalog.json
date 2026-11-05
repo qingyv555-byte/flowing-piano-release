@@ -1,0 +1,23 @@
+[
+  {
+    "id": "mutopia-moonlight-1",
+    "title": "月光奏鸣曲 · 第一乐章",
+    "composer": "Ludwig van Beethoven",
+    "aliases": [
+      "月光奏鸣曲",
+      "月光奏鸣曲第一乐章",
+      "Moonlight Sonata",
+      "Sonata No. 14",
+      "贝多芬月光"
+    ],
+    "file": "moonlight1.mid",
+    "sha256": "a34e969c4957f0e9e98fc9ff0278cc1284931bdae6d463469797faa2b73a9c5c",
+    "source_url": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=276",
+    "download_url": "https://www.mutopiaproject.org/ftp/BeethovenLv/O27/moonlight/moonlight-mids.zip",
+    "archive_member": "moonlight1.mid",
+    "license": "CC BY-SA 2.5",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.5/",
+    "attribution": "L. V. Beethoven; typeset by Chris Sawer and Stewart Holmes; The Mutopia Project, Mutopia-2007/02/11-276. Source edition: Berners 1908, edited by A. Winterberger.",
+    "edition": "Mutopia 2007-02-11, first movement; not an original sound recording"
+  }
+]

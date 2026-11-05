@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools==84.2.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-piano-studio"
+version = "0.1.0"
+description = "Canvas-first desktop music creation editor"
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: GNU General Public License v3 (GPLv3)"]
+requires-python = ">=3.12,<3.13"
+dependencies = ["keyring>=25,<26", "numpy>=2,<3", "PySide6>=6.12.0,<6.13", "comtypes>=1.4,<2; sys_platform == 'win32'"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "pytest-qt>=4.4,<5", "PyInstaller>=6,<7"]
+
+[project.scripts]
+ai-piano-studio = "ai_piano_studio.studio:main"
+ai-piano-studio-classic = "ai_piano_studio.__main__:main"
+ai-piano-studio-nocturne = "ai_piano_studio.nocturne:main"
+ai-piano-studio-preview = "ai_piano_studio.studio:main"
+
+[tool.setuptools]
+license-files = ["LICENSE", "COPYRIGHT", "THIRD_PARTY_NOTICES.md", "src/ai_piano_studio/qml/icons/LICENSE.lucide", "src/ai_piano_studio/qml/icons/LICENSE.lobe-icons", "resources/piano/LICENSE-SALAMANDER.txt"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ai_piano_studio = [
+  "resources/brand/*",
+  "resources/music_catalog/*",
+  "qml/*.qml",
+  "qml/*.js",
+  "qml/assets/*.png",
+  "qml/assets/*.webp",
+  "qml/icons/*.svg",
+  "qml/icons/LICENSE.lucide",
+  "qml/icons/LICENSE.lobe-icons",
+  "resources/templates/*/*.json",
+  "resources/templates/*/*.png",
+  "resources/help/*.md",
+]
+
+[tool.setuptools.exclude-package-data]
+ai_piano_studio = ["qml/assets/skin-*.png"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra -p no:cacheprovider"
