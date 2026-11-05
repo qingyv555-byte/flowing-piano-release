@@ -1,5 +1,9 @@
 # Flowing Piano
 
+**Windows x64 · 0.1.0 Beta 1**
+
+[**Download Windows Setup (.exe)**](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/AI-Piano-Studio-Setup.exe) · [Portable (.zip)](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/AI-Piano-Studio-Portable.zip) · [Release notes and checksums](https://github.com/qingyv555-byte/flowing-piano-release/releases/tag/v0.1.0-beta.1)
+
 **Play a melody. Shape it on the piano roll. Make it your own.**
 
 A Windows desktop piano and music editor, with optional AI assistance.

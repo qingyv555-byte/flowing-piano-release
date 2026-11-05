@@ -1,5 +1,9 @@
 # Flowing Piano
 
+**Windows x64 · 0.1.0 Beta 1**
+
+[**下载 Windows 安装包（.exe）**](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/AI-Piano-Studio-Setup.exe) · [便携版（.zip）](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/AI-Piano-Studio-Portable.zip) · [发布说明和校验值](https://github.com/qingyv555-byte/flowing-piano-release/releases/tag/v0.1.0-beta.1)
+
 **弹出旋律，在钢琴卷帘里编辑，把想法做成自己的作品。**
 
 面向 Windows 的桌面钢琴与音乐编辑工具。用电脑键盘弹奏、录制片段，
