@@ -15,11 +15,18 @@ export MIDI or WAV. Playing, editing and saving work without an AI account.
 
 ## Watch Flowing Piano
 
-[![12-second real playback preview of the built-in Canon Progression example](docs/media/canon-preview.gif)](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-Full.mp4)
+**Canon Progression** · built-in example, recorded in the dark theme. Click play and use the speaker control to hear the original audio. GitHub starts the player muted.
 
-**Canon Progression** · built-in example, recorded in the dark theme. The GIF is silent. The videos retain the recording's original audio.
+https://github.com/user-attachments/assets/1ddc1f60-b59b-4cdc-8dcb-7cb2014e5160
 
 [Full recording (33 s)](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-Full.mp4) · [3 s](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-3s.mp4) · [15 s](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-15s.mp4) · [30 s](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-30s.mp4)
+
+<details>
+<summary>12-second silent GIF preview</summary>
+
+![Real playback of the built-in Canon Progression example](docs/media/canon-preview.gif)
+
+</details>
 
 ## What you can do
 

@@ -14,11 +14,18 @@
 
 ## 实机演示
 
-[![内置《卡农进行》的 12 秒实机播放动图](docs/media/canon-preview.gif)](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-Full.mp4)
+**《卡农进行》** · 内置钢琴简编，暗色主题实机录屏。点播放后，点击播放器的喇叭即可听到原声。GitHub 播放器默认静音。
 
-**《卡农进行》** · 内置钢琴简编，暗色主题实机录屏。上方动图无声，下方视频保留原录屏音轨。
+https://github.com/user-attachments/assets/1ddc1f60-b59b-4cdc-8dcb-7cb2014e5160
 
 [完整录屏（约 33 秒）](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-Full.mp4) · [3 秒](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-3s.mp4) · [15 秒](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-15s.mp4) · [30 秒](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-30s.mp4)
+
+<details>
+<summary>查看 12 秒无声动图</summary>
+
+![内置《卡农进行》的实机播放画面](docs/media/canon-preview.gif)
+
+</details>
 
 ## 可以做什么
 
