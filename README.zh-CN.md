@@ -12,9 +12,13 @@
 [English](README.md) · [下载](https://github.com/qingyv555-byte/flowing-piano-release/releases)
 · [下载常见问题](docs/DOWNLOAD-FAQ.md) · [源码构建](docs/BUILD-FROM-SOURCE.md)
 
-## 编辑器预览
+## 实机演示
 
-![Flowing Piano 内置《卡农进行》示例](docs/images/canon-studio.png)
+[![内置《卡农进行》的 12 秒实机播放动图](docs/media/canon-preview.gif)](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-Full.mp4)
+
+**《卡农进行》** · 内置钢琴简编，暗色主题实机录屏。上方动图无声，下方视频保留原录屏音轨。
+
+[完整录屏（约 33 秒）](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-Full.mp4) · [3 秒](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-3s.mp4) · [15 秒](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-15s.mp4) · [30 秒](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-30s.mp4)
 
 ## 可以做什么
 

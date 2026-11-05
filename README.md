@@ -13,9 +13,13 @@ export MIDI or WAV. Playing, editing and saving work without an AI account.
 [简体中文](README.zh-CN.md) · [Downloads](https://github.com/qingyv555-byte/flowing-piano-release/releases)
 · [Download FAQ](docs/DOWNLOAD-FAQ.md) · [Build from source](docs/BUILD-FROM-SOURCE.md)
 
-## In the editor
+## Watch Flowing Piano
 
-![Flowing Piano with its built-in Canon Progression example](docs/images/canon-studio.png)
+[![12-second real playback preview of the built-in Canon Progression example](docs/media/canon-preview.gif)](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-Full.mp4)
+
+**Canon Progression** · built-in example, recorded in the dark theme. The GIF is silent. The videos retain the recording's original audio.
+
+[Full recording (33 s)](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-Full.mp4) · [3 s](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-3s.mp4) · [15 s](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-15s.mp4) · [30 s](https://github.com/qingyv555-byte/flowing-piano-release/releases/download/v0.1.0-beta.1/Flowing-Piano-Canon-30s.mp4)
 
 ## What you can do
 
