@@ -120,7 +120,11 @@ def build_studio_engine(profile_home: Path, *, defer_noncritical: bool = True):
             ([QPalette.LinkVisited], "#465E68" if paper else "#ADBFBD"),
         ):
             for role in roles:
-                palette.setColor(role, appearance.tintColor(value))
+                surface = role in (QPalette.Window, QPalette.Base, QPalette.Button,
+                                   QPalette.ToolTipBase, QPalette.AlternateBase,
+                                   QPalette.Light, QPalette.Midlight)
+                palette.setColor(role, appearance.tintSurfaceColor(value) if surface
+                                 else appearance.tintColor(value))
         for role in (QPalette.WindowText, QPalette.Text, QPalette.ButtonText):
             palette.setColor(QPalette.Disabled, role, appearance.tintColor("#7C8B91" if paper else "#788F95"))
         app.setPalette(palette)

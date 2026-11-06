@@ -12,7 +12,7 @@ from uuid import uuid4
 from PySide6.QtCore import QObject, Property, QRunnable, QSettings, QSize, Qt, QThreadPool, QUrl, Signal, Slot
 from PySide6.QtGui import QColor, QImageReader
 
-from .image_palette import image_seed, tint_color
+from .image_palette import image_seed, tint_color, tint_light_surface
 from .character_skins import SKINS, THEME_NAMES, artwork_url
 
 
@@ -367,6 +367,12 @@ class StudioAppearance(QObject):
 
     @Slot(str, result=QColor)
     def tintColor(self, value):
+        return tint_color(value, self.themeSeed)
+
+    @Slot(str, result=QColor)
+    def tintSurfaceColor(self, value):
+        if self._values["themeId"] == "paper":
+            return tint_light_surface(value, self.themeSeed)
         return tint_color(value, self.themeSeed)
 
     @Property("QVariantMap", notify=changed)

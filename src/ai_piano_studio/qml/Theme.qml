@@ -8,6 +8,9 @@ QtObject {
     function studioColor(value) {
         return imageSeed.a > 0 ? studioAppearance.tintColor(value) : value
     }
+    function studioSurfaceColor(value) {
+        return imageSeed.a > 0 ? studioAppearance.tintSurfaceColor(value) : value
+    }
     readonly property var noteSettings: studio && typeof studioAppearance !== "undefined"
         && studioAppearance !== null ? studioAppearance.values : ({})
     readonly property bool customNoteColorActive: studio && noteSettings.noteColorSource === "custom"
@@ -66,16 +69,16 @@ QtObject {
             && scene.customBackgroundPath.length === 0 ? gardenArtwork : scene.backgroundSource
     }
     // Stage and surfaces
-    readonly property color appBackground: studio ? studioColor((paper ? "#E8EDF0" : "#111F28")) : nocturne ? "#030604" : "#07111E"
-    readonly property color canvasBackground: studio ? studioColor((paper ? "#F4F7F7" : "#13232C")) : nocturne ? "#090F0C" : "#091827"
-    readonly property color surface: studio ? studioColor((paper ? "#F8FAF9" : "#1A2B34")) : nocturne ? "#D40E1412" : "#0B1A2A"
-    readonly property color elevatedSurface: studio ? studioColor((paper ? "#FFFFFF" : "#21333D")) : nocturne ? "#E8151D18" : "#0E2032"
-    readonly property color surfaceHover: studio ? studioColor((paper ? "#DBE6E6" : "#2A4149")) : nocturne ? "#29382F" : "#122D43"
-    readonly property color surfacePressed: studio ? studioColor((paper ? "#CBDADA" : "#15262F")) : nocturne ? "#0B110D" : "#081520"
-    readonly property color surfaceSelected: studio ? studioColor((paper ? "#D4E3DF" : "#304B50")) : nocturne ? "#304034" : "#103744"
-    readonly property color inputBackground: studio ? studioColor((paper ? "#F0F5F4" : "#15262F")) : nocturne ? "#111A15" : "#091827"
-    readonly property color popupBackground: studio ? studioColor((paper ? "#F8FAF9" : "#21333D")) : nocturne ? "#151D18" : "#0E2032"
-    readonly property color selectedBackground: studio ? studioColor((paper ? "#C3DAD4" : "#3A555B")) : nocturne ? "#334638" : "#12404D"
+    readonly property color appBackground: studio ? studioSurfaceColor((paper ? "#E8EDF0" : "#111F28")) : nocturne ? "#030604" : "#07111E"
+    readonly property color canvasBackground: studio ? studioSurfaceColor((paper ? "#F4F7F7" : "#13232C")) : nocturne ? "#090F0C" : "#091827"
+    readonly property color surface: studio ? studioSurfaceColor((paper ? "#F8FAF9" : "#1A2B34")) : nocturne ? "#D40E1412" : "#0B1A2A"
+    readonly property color elevatedSurface: studio ? studioSurfaceColor((paper ? "#FFFFFF" : "#21333D")) : nocturne ? "#E8151D18" : "#0E2032"
+    readonly property color surfaceHover: studio ? studioSurfaceColor((paper ? "#DBE6E6" : "#2A4149")) : nocturne ? "#29382F" : "#122D43"
+    readonly property color surfacePressed: studio ? studioSurfaceColor((paper ? "#CBDADA" : "#15262F")) : nocturne ? "#0B110D" : "#081520"
+    readonly property color surfaceSelected: studio ? studioSurfaceColor((paper ? "#D4E3DF" : "#304B50")) : nocturne ? "#304034" : "#103744"
+    readonly property color inputBackground: studio ? studioSurfaceColor((paper ? "#F0F5F4" : "#15262F")) : nocturne ? "#111A15" : "#091827"
+    readonly property color popupBackground: studio ? studioSurfaceColor((paper ? "#F8FAF9" : "#21333D")) : nocturne ? "#151D18" : "#0E2032"
+    readonly property color selectedBackground: studio ? studioSurfaceColor((paper ? "#C3DAD4" : "#3A555B")) : nocturne ? "#334638" : "#12404D"
     readonly property color borderSubtle: studio ? studioColor((paper ? "#CAD7D8" : "#2C414A")) : nocturne ? "#404F5A54" : Qt.rgba(22 / 255, 50 / 255, 74 / 255, 0.78)
     readonly property color borderStrong: studio ? studioColor((paper ? "#9BAFB2" : "#506970")) : nocturne ? "#46564B" : "#16324A"
     readonly property color scrim: "#A6000000"

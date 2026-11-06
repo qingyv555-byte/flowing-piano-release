@@ -2,6 +2,7 @@
 from pathlib import Path
 import os
 import struct
+import xml.etree.ElementTree as ET
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 from PySide6.QtCore import QBuffer, QByteArray, QIODevice, QRectF
@@ -9,10 +10,31 @@ from PySide6.QtGui import QGuiApplication, QImage, QPainter
 from PySide6.QtSvg import QSvgRenderer
 
 
+def write_header_marks(brand: Path):
+    """Fit the approved paths to the title bar without adding a badge."""
+    namespace = "http://www.w3.org/2000/svg"
+    ET.register_namespace("", namespace)
+    master = ET.parse(brand / "flowing-piano.svg").getroot()
+    for filename, fill, outline in (
+        ("flowing-piano-header.svg", "#315F64", False),
+        ("flowing-piano-header-light.svg", "#F5F3EC", True),
+    ):
+        header = ET.Element(f"{{{namespace}}}svg", viewBox="30 30 176 180")
+        for path in master.findall(f"{{{namespace}}}path"):
+            attributes = {"d": path.attrib["d"], "fill": fill}
+            if outline:
+                attributes.update({"stroke": "#315F64", "stroke-width": "2",
+                                   "stroke-linejoin": "round", "paint-order": "stroke fill"})
+            ET.SubElement(header, f"{{{namespace}}}path", attributes)
+        ET.indent(header, space="  ")
+        (brand / filename).write_text(ET.tostring(header, encoding="unicode") + "\n", encoding="utf-8")
+
+
 def main():
     app = QGuiApplication.instance() or QGuiApplication([])
     root = Path(__file__).resolve().parents[1]
     brand = root / "src/ai_piano_studio/resources/brand"
+    write_header_marks(brand)
     renderer = QSvgRenderer(str(brand / "flowing-piano.svg"))
     if not renderer.isValid():
         raise RuntimeError("Invalid brand SVG")

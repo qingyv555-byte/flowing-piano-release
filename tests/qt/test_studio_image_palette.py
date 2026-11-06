@@ -63,8 +63,8 @@ def test_image_palette_reaches_assistant_and_rolls_back(studio_session, tmp_path
     assert settings.applyPreview()
     reopened = StudioAppearance(QSettings(settings._settings.fileName(), QSettings.IniFormat), settings._asset_home)
     qtbot.waitUntil(lambda: reopened.themeSeed.alpha() > 0)
-    # Theme defaults are now paper; persist the tint of the actual base color.
-    assert reopened.tintColor(original.name()) == root.color()
+    # Paper surfaces use their own tint; text still preserves exact luminance.
+    assert reopened.tintSurfaceColor(original.name()) == root.color()
     settings.setValue("editorSource", "none")
     assert root.color() == qml(assistant, "theme.appBackground") == original
     assistant.closeRequested.emit()

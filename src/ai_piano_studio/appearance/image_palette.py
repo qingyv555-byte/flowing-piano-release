@@ -47,8 +47,24 @@ def tint_color(value: str, seed: QColor) -> QColor:
     if seed.alpha() == 0:
         return color
     target = luminance(color)
-    hue = max(0, seed.hslHueF())
     saturation = min(0.32, seed.hslSaturationF(), color.hslSaturationF())
+    return _tint_at_luminance(color, seed, target, saturation)
+
+
+def tint_light_surface(value: str, seed: QColor) -> QColor:
+    """Give paper surfaces room for a visible hue; never tint white text here."""
+    color = QColor(value)
+    target = luminance(color)
+    if seed.alpha() == 0 or seed.hslSaturationF() < 0.08 or target < 0.80:
+        return tint_color(value, seed)
+    # Exact white cannot carry a hue at luminance 1. A small, bounded reduction
+    # keeps the light hierarchy while allowing the picture color to be seen.
+    return _tint_at_luminance(color, seed, target * 0.92,
+                              min(0.45, seed.hslSaturationF()))
+
+
+def _tint_at_luminance(color: QColor, seed: QColor, target: float, saturation: float) -> QColor:
+    hue = max(0, seed.hslHueF())
     low, high = 0.0, 1.0
     for _ in range(18):
         lightness = (low + high) / 2

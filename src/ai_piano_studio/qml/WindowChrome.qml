@@ -56,18 +56,15 @@ Item {
             anchors.rightMargin: root.theme.space1
             spacing: root.theme.space2
 
-            Rectangle {
-                Layout.preferredWidth: root.theme.iconMedium
-                Layout.preferredHeight: root.theme.iconMedium
-                radius: root.theme.radiusM
-                color: "#F5F3EC"
-
-                Image {
-                    anchors.fill: parent
-                    anchors.margins: 0
-                    source: "../resources/brand/flowing-piano.svg"
-                    fillMode: Image.PreserveAspectFit
-                }
+            Image {
+                objectName: "windowChromeBrandMark"
+                Layout.preferredWidth: 24
+                Layout.preferredHeight: 24
+                source: root.theme.paper
+                    ? "../resources/brand/flowing-piano-header.svg"
+                    : "../resources/brand/flowing-piano-header-light.svg"
+                sourceSize: Qt.size(48, 48)
+                fillMode: Image.PreserveAspectFit
             }
 
             Label {
