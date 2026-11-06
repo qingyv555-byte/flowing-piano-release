@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 import tempfile
 
-from PySide6.QtCore import QCoreApplication, QStandardPaths
+from PySide6.QtCore import QCoreApplication, QObject, QStandardPaths, Signal
 
 from ai_piano_studio.domain.project import ProjectState
 from ai_piano_studio.persistence.project_document import (
@@ -40,7 +40,7 @@ def _write_json_atomic(path: Path, payload: dict[str, object]) -> None:
         raise
 
 
-class RecoveryStore:
+class RecoveryStore(QObject):
     """Persists a crash-recovery snapshot of the current project.
 
     The snapshot lives in an application data directory, never next to the
@@ -48,8 +48,34 @@ class RecoveryStore:
     the app keeps it so unsaved work survives crashes and accidental closes.
     """
 
+    written = Signal()
+
     def __init__(self, directory: str | Path) -> None:
+        super().__init__()
         self._directory = Path(directory)
+        self._writer = None
+
+    @property
+    def pending(self) -> bool:
+        return self._writer is not None and self._writer.pending
+
+    def queue_document(self, document: ProjectDocument, original_path: str | None) -> None:
+        if self._writer is None:
+            from .recovery_writer import RecoveryWriter
+            self._writer = RecoveryWriter(self._directory)
+            self._writer.completed.connect(self.written)
+            app = QCoreApplication.instance()
+            if app is not None:
+                app.aboutToQuit.connect(self._writer.flush)
+        self._writer.queue(document, original_path)
+
+    def flush(self) -> None:
+        if self._writer is not None:
+            self._writer.flush()
+
+    def cancel_pending(self) -> None:
+        if self._writer is not None:
+            self._writer.invalidate()
 
     @property
     def available(self) -> bool:
@@ -61,9 +87,11 @@ class RecoveryStore:
     def write_document(
         self, document: ProjectDocument, original_path: str | None
     ) -> None:
+        if self._writer is not None:
+            self._writer.invalidate()
         try:
             self._directory.mkdir(parents=True, exist_ok=True)
-            save_project_document(self._directory / SNAPSHOT_NAME, document)
+            save_project_document(self._directory / SNAPSHOT_NAME, document, compact=True)
             _write_json_atomic(
                 self._directory / META_NAME,
                 {
@@ -129,6 +157,8 @@ class RecoveryStore:
         return document, original_path
 
     def clear(self) -> None:
+        if self._writer is not None:
+            self._writer.invalidate()
         for name in (SNAPSHOT_NAME, META_NAME):
             try:
                 (self._directory / name).unlink(missing_ok=True)
@@ -142,6 +172,13 @@ class NullRecoveryStore:
     @property
     def available(self) -> bool:
         return False
+
+    @property
+    def pending(self) -> bool:
+        return False
+
+    def queue_document(self, document: ProjectDocument, original_path: str | None) -> None:
+        self.write_document(document, original_path)
 
     def write(self, state: ProjectState, original_path: str | None) -> None:
         pass

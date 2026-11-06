@@ -353,7 +353,9 @@ class EditorController(QObject):
         self._recovery_timer = QTimer(self)
         self._recovery_timer.setSingleShot(True)
         self._recovery_timer.setInterval(recovery_interval_ms)
-        self._recovery_timer.timeout.connect(self._write_recovery_now)
+        self._recovery_timer.timeout.connect(self._queue_recovery_now)
+        if isinstance(self._recovery, RecoveryStore):
+            self._recovery.written.connect(self.recoveryAvailableChanged)
         self._sync_state = "pending" if self.state.has_unsynced_changes else "synced"
         self._sync_timer = QTimer(self)
         self._sync_timer.setSingleShot(True)
@@ -1088,6 +1090,8 @@ class EditorController(QObject):
             if refresh_started:
                 self._restore_refresh_checkpoint(refresh_checkpoint)
             raise
+        if isinstance(self._recovery, RecoveryStore):
+            self._recovery.cancel_pending()
 
     def _remember_recent(self, path: str, state: ProjectState | None = None) -> None:
         state = state if state is not None else self.state
@@ -1296,7 +1300,7 @@ class EditorController(QObject):
             return
         self._autosave_timer.stop()
         self._recovery_timer.stop()
-        if self._recovery.available:
+        if self._recovery.available or self._recovery.pending:
             self._recovery.clear()
             self.recoveryAvailableChanged.emit()
 
@@ -1330,6 +1334,14 @@ class EditorController(QObject):
         self._autosave_timer.setInterval(normalized_delay * 1000)
         if self.isDirty:
             self._update_autosave_state()
+
+    def _queue_recovery_now(self) -> None:
+        if not self._agent_turn_active and self.isDirty:
+            self._recovery.queue_document(
+                ProjectDocument(self.state, self.harmony_metadata), self._current_path
+            )
+            if self.recordingTakeActive:
+                self._recovery_timer.start()
 
     def _write_recovery_now(self) -> None:
         if not self._agent_turn_active and self.isDirty:

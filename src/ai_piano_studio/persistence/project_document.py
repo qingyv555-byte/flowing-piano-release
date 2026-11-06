@@ -50,14 +50,14 @@ def load_project_document(path: str | Path) -> ProjectDocument:
     return project_document_from_dict(data)
 
 
-def save_project_document(path: str | Path, document: ProjectDocument) -> None:
+def save_project_document(path: str | Path, document: ProjectDocument, *, compact: bool = False) -> None:
     target = Path(path)
     temporary: Path | None = None
     try:
         text = json.dumps(
             project_document_to_dict(document),
             ensure_ascii=False,
-            indent=2,
+            indent=None if compact else 2,
             allow_nan=False,
         ) + "\n"
         file_descriptor, temporary_name = tempfile.mkstemp(

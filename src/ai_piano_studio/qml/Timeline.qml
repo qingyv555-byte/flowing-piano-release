@@ -140,11 +140,27 @@ Rectangle {
         ? keyboard.recordCursorSeconds
         : (root.selectionAudition !== null && root.selectionAudition.playing
             ? root.selectionAudition.positionSeconds : playback.positionSeconds)
+    readonly property real displayCursorSeconds: visualPlaybackClock.active
+        ? visualPlaybackClock.positionSeconds : root.cursorSeconds
+    VisualPlaybackClock {
+        id: visualPlaybackClock
+        active: root.theme.studio && root.visible && playback.playing
+            && !keyboard.recording && !root.detachedAuditionActive
+            && !(root.selectionAudition !== null && root.selectionAudition.playing)
+            && (!root.Window.window || root.Window.window.visibility !== Window.Minimized)
+        sourceSeconds: playback.positionSeconds
+        rate: playback.playbackRate
+        totalSeconds: playback.totalSeconds
+        onPositionSecondsChanged: {
+            if (active && root.followPlayback)
+                root.revealPlaybackPosition(false)
+        }
+    }
     readonly property real playheadScreenSeconds:
         root.followPlayback && playback.playing
-        && root.cursorSeconds >= root.visibleSeconds * 0.4
+        && root.displayCursorSeconds >= root.visibleSeconds * 0.4
         ? root.visibleSeconds * 0.4
-        : root.cursorSeconds - root.viewStartSeconds
+        : root.displayCursorSeconds - root.viewStartSeconds
     readonly property bool playheadVisible: keyboard.recording || playback.playing
         || (root.selectionAudition !== null && root.selectionAudition.playing)
         || playback.positionSeconds > 0 || playback.totalSeconds > 0
@@ -605,7 +621,7 @@ Rectangle {
         if (!root.followPlayback && !keyboard.recording)
             return
 
-        var cursor = Math.max(0, Number(root.cursorSeconds))
+        var cursor = Math.max(0, Number(root.displayCursorSeconds))
         var targetStart = root.clampFollowViewStart(
             cursor - root.visibleSeconds * 0.4
         )
@@ -1442,7 +1458,23 @@ Rectangle {
             id: rawNoteCanvas
             objectName: "rawNoteCanvas"
             opacity: root.editorNotesOpacity
-            anchors.fill: parent
+            // Keep the existing overscan slice as a retained texture during
+            // playback. Follow motion translates it; edits use live painting.
+            readonly property bool cachedPlayback: root.useRawCanvas && root.theme.studio
+                && root.theme.noteStyle === "flat" && root.playbackBridge.playing
+                && !root.detachedAuditionActive && !keyboard.recording
+                && !(root.selectionAudition && root.selectionAudition.playing)
+                && !root.gestureFeedbackVisible && !root.creatingNote
+            readonly property real paintViewStart: cachedPlayback
+                ? Math.max(0, root.modelViewportStartSeconds) : root.viewStartSeconds
+            x: cachedPlayback ? (paintViewStart - root.viewStartSeconds) * root.pixelsPerSecond : 0
+            y: 0
+            width: cachedPlayback ? Math.max(canvas.width,
+                (root.modelViewportEndSeconds - paintViewStart) * root.pixelsPerSecond + root.keyWidth)
+                : canvas.width
+            height: canvas.height
+            onPaintViewStartChanged: requestPaint()
+            onCachedPlaybackChanged: requestPaint()
             visible: root.useRawCanvas
             enabled: visible
             z: 9
@@ -1469,13 +1501,13 @@ Rectangle {
                 // leave stale colors behind.
                 var stylesByLayer = Object.create(null)
                 var keyWidth = root.keyWidth
-                var viewStart = root.viewStartSeconds
+                var viewStart = rawNoteCanvas.paintViewStart
                 var timeScale = root.pixelsPerSecond
-                var rightEdge = root.width
+                var rightEdge = width
                 var topPitch = root.highestPitch
                 var rowHeight = root.rowHeight
                 var noteHeight = Math.max(4, rowHeight - 4)
-                var playing = root.playbackBridge.playing && !root.detachedAuditionActive
+                var playing = !rawNoteCanvas.cachedPlayback && root.playbackBridge.playing && !root.detachedAuditionActive
                 var position = root.playbackBridge.positionSeconds
                 var onlyChanges = root.proposalOnlyChanges
                 var deletedFill = root.theme.muted
@@ -1561,7 +1593,8 @@ Rectangle {
                 property real previousY: 0
                 property bool gestureStarted: false
                 onPressed: mouse => {
-                    var hit = root.rawNoteAt(mouse.x, mouse.y)
+                    var local = rawCanvasPointer.mapToItem(canvas, mouse.x, mouse.y)
+                    var hit = root.rawNoteAt(local.x, local.y)
                     if (!hit) {
                         mouse.accepted = false
                         return
@@ -1617,7 +1650,7 @@ Rectangle {
             }
             Connections {
                 target: root
-                function onViewStartSecondsChanged() { rawNoteCanvas.requestPaint() }
+                function onViewStartSecondsChanged() { if (!rawNoteCanvas.cachedPlayback) rawNoteCanvas.requestPaint() }
                 function onViewportTopChanged() { rawNoteCanvas.requestPaint() }
                 function onHighestPitchChanged() { rawNoteCanvas.requestPaint() }
                 function onPixelsPerSecondChanged() { rawNoteCanvas.requestPaint() }
@@ -1636,7 +1669,38 @@ Rectangle {
             Connections {
                 target: root.playbackBridge
                 function onPlayingChanged() { rawNoteCanvas.requestPaint() }
-                function onPositionChanged() { rawNoteCanvas.requestPaint() }
+                function onPositionChanged() { if (!rawNoteCanvas.cachedPlayback) rawNoteCanvas.requestPaint() }
+            }
+        }
+
+        Repeater {
+            id: cachedPlaybackHighlights
+            objectName: "cachedPlaybackHighlights"
+            // Only sounding notes need to change on each playback clock tick.
+            model: rawNoteCanvas.cachedPlayback ? root.rawCanvasItems.filter(function(item) {
+                var start = Number(item.startTime || 0)
+                return Boolean(item.layerVisible) && String(item.status) !== "deleted"
+                    && root.layerVisibleInCurrentMode(String(item.layerId || ""))
+                    && root.playbackBridge.positionSeconds >= start
+                    && root.playbackBridge.positionSeconds <= start + Number(item.duration || 0)
+            }) : []
+            delegate: Rectangle {
+                required property var modelData
+                objectName: "cachedPlaybackHighlight-" + String(modelData.noteId)
+                readonly property real rawX: root.keyWidth
+                    + (Number(modelData.startTime) - root.viewStartSeconds) * root.pixelsPerSecond
+                x: Math.max(root.keyWidth, rawX)
+                y: (root.highestPitch - Number(modelData.pitch)) * root.rowHeight + 2
+                width: Math.max(0, Math.min(canvas.width, rawX
+                    + Math.max(18, Number(modelData.duration) * root.pixelsPerSecond)) - x)
+                height: Math.max(4, root.rowHeight - 4)
+                visible: width > 0
+                color: "transparent"
+                border.width: 2
+                border.color: root.theme.notePlaybackBorder
+                opacity: root.editorNotesOpacity * root.layerOpacityInCurrentMode(
+                    String(modelData.layerId || ""), String(modelData.visualRole || modelData.layerRole || "other"))
+                z: 10
             }
         }
 
@@ -2527,8 +2591,9 @@ Rectangle {
 
     Connections {
         target: playback
+        function onTransportInterrupted() { visualPlaybackClock.expectDiscontinuity() }
         function onPositionChanged() {
-            if (root.followPlayback && playback.playing)
+            if (root.followPlayback && playback.playing && !visualPlaybackClock.active)
                 root.requestPlaybackFollow()
         }
         function onPlayingChanged() {

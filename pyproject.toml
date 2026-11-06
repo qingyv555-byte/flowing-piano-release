@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ai-piano-studio"
-version = "0.1.0"
+version = "0.1.1"
 description = "Canvas-first desktop music creation editor"
 readme = "README.md"
 license = {file = "LICENSE"}
