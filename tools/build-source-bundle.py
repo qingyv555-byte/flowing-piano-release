@@ -22,6 +22,7 @@ ROOT_FILES = {
 PUBLIC_DOCS = {
     'docs/BUILD-FROM-SOURCE.md', 'docs/LICENSING.md', 'docs/RELEASING.md',
     'docs/TEMPLATE-SOURCES.md', 'docs/DOWNLOAD-FAQ.md',
+    'docs/product-polish/wave2-evaluation.md',
 }
 
 

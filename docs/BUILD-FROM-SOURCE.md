@@ -17,9 +17,12 @@ install-only-stripped）、PySide6 / Shiboken 6.12.0、PyInstaller 6.21.0、Inno
    运行时构建提交为 `fa506e0858ac9f2cc5b289c137b888a2aa24d1ee`。
 3. 如没有附带缓存，先运行 `.venv-dev/Scripts/python.exe tools/fetch-release-sources.py`。
    下载脚本按固定清单验证全部档案，不选择线上最新版本。
-4. 静音测试用 `.venv-dev/Scripts/python.exe tools/run_silent_tests.py -q`；不要改产品音量。
+4. 完整离线集成测试还会验证可选的 MusicXML / 图片 / PDF 解析，先运行
+   `tools/Install-MusicRuntime.ps1` 准备项目内隔离的 `.music-runtime`；
+   这一步下载固定解析依赖，不会调用模型或播放音频。该运行时不打入普通安装包。
+   静音测试用 `.venv-dev/Scripts/python.exe tools/run_silent_tests.py -q`；不要改产品音量。
    `tools/build-portable.ps1` 收集精确许可并构建目录式 Portable。
-   `tools/build-installer.ps1 -Version 0.1.0` 用 Inno Setup 构建安装程序。
+   `tools/build-installer.ps1 -Version 0.1.1` 用 Inno Setup 构建安装程序。
    完整候选检查入口是 `tools/build-release.ps1`，检查范围见 `CONSTRAINTS.md`。
 5. Qt 使用动态链接。Portable 的 `_internal/PySide6/` 保留 DLL 和 QML 插件，
    可以更换 ABI 兼容的修改版 Qt/PySide6；本应用没有签名校验或限制更换这些库。

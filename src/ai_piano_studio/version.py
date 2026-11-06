@@ -5,6 +5,6 @@ from __future__ import annotations
 import os
 
 
-APP_VERSION = "0.1.0"
+APP_VERSION = "0.1.1"
 IS_BETA = True
 BUILD_COMMIT = os.environ.get("AI_PIANO_BUILD_COMMIT", "local-build")

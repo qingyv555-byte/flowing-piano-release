@@ -818,7 +818,7 @@ class PlaybackController(QObject):
             self._sound_id = sound_id
             self._apply_sound_parameters(reset=True)
             self._on_position(position)
-            if sound_id == 'salamander':
+            if sound_id == 'salamander' and self._native_sound is not None:
                 self._native_sound.drop_warm()
             if resume:
                 self.play()
